@@ -3,6 +3,10 @@ import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:theback/%D8%A7%D8%AA%D8%B5%D9%84_%D8%A8%D9%86%D8%A7.dart';
+import 'package:theback/%D8%A7%D9%84%D8%B9%D8%B1%D9%88%D8%B6_%D8%A7%D9%84%D8%AE%D8%A7%D8%B5%D9%87.dart';
+import 'package:theback/%D8%A7%D9%84%D9%85%D8%B4%D8%B1%D9%88%D8%B9%D8%A7%D8%AA.dart';
+import 'package:theback/%D8%B9%D8%B1%D8%B6_%D8%AE%D8%A7%D8%B5.dart';
 import 'package:theback/const.dart';
 
 
@@ -90,106 +94,105 @@ class _SaramicaState extends State<Saramica> {
                       ),
                     ],
                   ),
-
-
+            
+            
                 ),
-
+            
                  Divider(height: 1.h,thickness: 1,color: Colors.white,),
-
-                 Padding(
-                  padding: const EdgeInsets.all(10.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      Text('الرئيسية',style: TextStyle(color: Colors.white,fontSize: 20.sp,fontWeight: FontWeight.bold),),
-                    ],
-                  ),
-                ),
-
+            
+                 GestureDetector(
+                   onTap: (){
+                     Navigator.pushReplacementNamed(context, Saramica.id);
+                   },
+                   child: Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        Text('الرئيسية',style: TextStyle(color: Colors.white,fontSize: 20.sp,fontWeight: FontWeight.bold),),
+                      ],
+                    ),
+                                   ),
+                 ),
+            
                  Divider(height: 1.h,thickness: 1.h,color: Colors.white,),
+            
+                 GestureDetector(
+                   onTap: (){
+                     Navigator.pushReplacementNamed(context,Special.id);
+                   },
+                   child: Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        const Icon( Icons.star_border ,color: Colors.white,),
+                        const Spacer(),
+                        Text('العروض الخاصة',style: TextStyle(color: Colors.white,fontSize: 20.sp,fontWeight: FontWeight.bold)),
 
-                 Padding(
-                  padding: const EdgeInsets.all(10.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      const Icon( Icons.star_border ,color: Colors.white,),
-                      const Spacer(),
-                      Text('العروض الخاصة',style: TextStyle(color: Colors.white,fontSize: 20.sp,fontWeight: FontWeight.bold)),
-
-                    ],
-                  ),
-                ),
+                      ],
+                    ),
+                                   ),
+                 ),
 
                 Divider(height: 1.h,thickness: 1.h,color: Colors.white,),
-
-                ExpansionTile(
-                  controlAffinity: ListTileControlAffinity.leading,
-                  iconColor: Colors.white,
-                  collapsedIconColor: Colors.white,
-                  dense: true,
-                  tilePadding: EdgeInsetsDirectional.symmetric(horizontal: 10.w),
-                  title:Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                       Text('اختر مساحتك',style: TextStyle(color: Colors.white,fontSize: 20.sp,fontWeight: FontWeight.bold)),
-
-                    ],
-                  ),
-                  children:[
-                    menuItem("الحمامات"),
-                    menuItem("المساحات الخارجية"),
-                    menuItem("الغرف المعيشة"),
-                    menuItem("الحوائط"),
-                    menuItem("غرف النوم"),
-                    menuItem("تجاري"),
-                    menuItem("شاهد الكل", isLast: true),
-                  ]
-                ),
-
-
-                Divider(height: 1.h,thickness: 1.h,color: Colors.white,),
-
-                 Padding(
-                  padding: const EdgeInsets.all(10.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      Text('المشروعات',style: TextStyle(color: Colors.white,fontSize: 20.sp,fontWeight: FontWeight.bold)),
-                    ],
-                  ),
-                ),
+            
+                 GestureDetector(
+                   onTap: (){
+                     Navigator.pushReplacementNamed(context, Projects.id);
+                   },
+                   child: Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        Text('المشروعات',style: TextStyle(color: Colors.white,fontSize: 20.sp,fontWeight: FontWeight.bold)),
+                      ],
+                    ),
+                                   ),
+                 ),
                  Divider(height: 1.h,thickness: 1.h,color: Colors.white,),
-                Padding(
-                  padding:  const EdgeInsets.all(10.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      const Icon(Icons.percent,color: Colors.red,),
-                      const Spacer(),
-                      Container(
-                        color: Colors.red
-                          ,child:  Text('عرض خاص',style: TextStyle(color: Colors.white,fontSize: 20.sp,fontWeight: FontWeight.bold))),
+                GestureDetector(
+                  onTap: ()
+                  {
+                    Navigator.pushReplacementNamed(context, SpecialOrder.id);
+                  },
+                  child: Padding(
+                    padding:  const EdgeInsets.all(10.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        const Icon(Icons.percent,color: Colors.red,),
+                        const Spacer(),
+                        Container(
+                          color: Colors.red
+                            ,child:  Text('عرض خاص',style: TextStyle(color: Colors.white,fontSize: 20.sp,fontWeight: FontWeight.bold))),
 
 
-                    ],
+                      ],
+                    ),
                   ),
                 ),
-
+            
                  Divider(height: 1.h,thickness: 1.h,color: Colors.white,),
-
-                 Padding(
-                  padding: const EdgeInsets.all(10.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      Text('اتصل بنا',style: TextStyle(color: Colors.white,fontSize: 20.sp,fontWeight: FontWeight.bold)),
-                    ],
-                  ),
-                ),
-
+            
+                 GestureDetector(
+                   onTap: (){
+                     Navigator.pushReplacementNamed(context, CallUs.id);
+                   },
+                   child: Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        Text('اتصل بنا',style: TextStyle(color: Colors.white,fontSize: 20.sp,fontWeight: FontWeight.bold)),
+                      ],
+                    ),
+                                   ),
+                 ),
+            
                  Divider(height: 1.h,thickness: 1.h,color: Colors.white,),
-
+            
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: ElevatedButton(
@@ -232,7 +235,7 @@ class _SaramicaState extends State<Saramica> {
                   aspectRatio: 3/2,
                   height: 540.h,
                   viewportFraction: 1.0,
-                  autoPlay: true,
+                  autoPlay: false,
                   scrollPhysics: const BouncingScrollPhysics(),
                   enlargeStrategy: CenterPageEnlargeStrategy.zoom,
                   onPageChanged: (index,reason){
@@ -507,21 +510,3 @@ class _SaramicaState extends State<Saramica> {
 
 
 
-Widget menuItem(String text, {bool isLast = false}) {
-  return Column(
-    children: [
-      Padding(
-        padding:  EdgeInsets.symmetric(vertical: 12.h
-            , horizontal: 16.w),
-        child: Align(
-          alignment: Alignment.centerRight,
-          child:
-          Text(text, style:  TextStyle(color: Colors.white, fontSize: 16.sp),
-          ),
-        ),
-      ),
-      if (!isLast)
-        Divider(color: Colors.white, height: 1.h),
-    ],
-  );
-}
