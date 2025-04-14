@@ -18,10 +18,10 @@ class Special extends StatefulWidget {
 class _SpecialState extends State<Special> {
 
   List<ListViewItem>items=[
-    ListViewItem(text: 'ارلون', image: 'assets/images/3.jpeg'),
-    ListViewItem(text: 'بيكايا', image: 'assets/images/22.jpg'),
-    ListViewItem(text: 'ابهي جراي', image: 'assets/images/55.jpg'),
-    ListViewItem(text: 'كينروكو', image: 'assets/images/22.jpg'),
+    const ListViewItem(text: 'ارلون', image: 'assets/images/3.jpeg'),
+    const ListViewItem(text: 'بيكايا', image: 'assets/images/22.jpg'),
+    const ListViewItem(text: 'ابهي جراي', image: 'assets/images/55.jpg'),
+    const ListViewItem(text: 'كينروكو', image: 'assets/images/22.jpg'),
   ];
 
   @override
@@ -235,7 +235,7 @@ class _SpecialState extends State<Special> {
             children: [
               Container(
                 width: 200,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: Colors.brown
                 ),
                 child: Center(child: Padding(

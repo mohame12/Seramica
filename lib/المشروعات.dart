@@ -218,7 +218,107 @@ class _ProjectsState extends State<Projects> {
 
 
       ),
+      body: SingleChildScrollView(
+        physics: BouncingScrollPhysics(),
+        child: Column(
+          children: [
+            Stack(
+              children: [
+                Image(image: const AssetImage('assets/images/المشروعات.jpg'),fit: BoxFit.cover,height: 240.h,),
+                Positioned(
+                    top: 15.h,
+                    right: 10.h,
+                    child: Text('المشروعات',style: TextStyle(color: Colors.white,fontSize: 15.sp,fontWeight: FontWeight.bold),)),
+                Positioned(
+                    bottom: 25.h,
+                    right: 15.w,
+                    child: Text('المشروعات الكبري',style: TextStyle(color: Colors.white,fontSize: 22.sp,fontWeight: FontWeight.bold),)),
+              ],
+            ),
+            SizedBox(
+              height: 15.h,
+            ),
+            Text('التوصيل القياسي المجاني ممول للطلبات عبر الانترنت',style: TextStyle(color: Colors.black,fontSize: 12.sp,fontWeight: FontWeight.bold),),
+            SizedBox(
+              height: 15.h,
+            ),
+            Text('أكتشف حلولنا للمساحات الواسعة', style: TextStyle(color: Colors.black, fontSize: 25.sp,),),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Text('المناطق التجارية والأماكن العامة والعمارات السكنية, منتجاتنا من السيراميك ',style: TextStyle(fontSize: 12.sp,color: Colors.grey),),
+                SizedBox(
+                  width: 20.w,
+                ),
+              ],
+            ),
+            Text('مناسبة لأي مشروع يمكن ان تتخيله',style: TextStyle(color: Colors.grey,fontSize:12.sp ),),
+            SizedBox(
+              height: 15.h,
+            ),
+        
+            Image(image: const AssetImage('assets/images/collage-projects.jpg'),fit: BoxFit.cover,height: 150.h,),
+            
+            const Text('لا حدود للأبتكار والأبداع ,نحن نقدم حلولا متناسقة للأرضيات والجدران, مناسبة لأي منطقة. سيراميكا يمكن ان يبلي احتياجات أي مشروعات وتجديدات وأنشاءات جديدة لما نتمتع به من مجموعة لانهائية من الحلول الكلاسيكية والعصرية يمكنك الاختيار منها بسهولة', textAlign: TextAlign.center,style: TextStyle(color: Colors.grey),),
+        
+            SizedBox(height: 30.h,),
+            Container(
+        
+              decoration: const BoxDecoration(
+                color: Colors.brown,
+              ),
+              child: Padding(
+                padding: const EdgeInsets.all(10),
+                child: Text('تواصل بنا لمعرفة مشروعتنا',style: TextStyle(color: Colors.white,fontSize: 20.sp),),
+              ),
+            ),
+            SizedBox(height: 30.h,),
+            Text('مراجعنا العالمية', style: TextStyle(color: Colors.black,fontSize: 25.sp),),
+            const Item(image: 'assets/images/commercial-360x232.jpg',text: 'COMMERCIAL',),
+            const Item(image: 'assets/images/educational-1-360x270.jpg',text: 'EDUCATIONAL',),
+            const Item(image: 'assets/images/government-360x270.jpg',text: 'GOVERNMENT',),
+            const Item(image: 'assets/images/public-spaces-360x239.jpg',text: 'PUBLIC SPACES',),
+            const Item(image: 'assets/images/residential-360x269.jpg',text: 'RESIDENTIAL',),
+            SizedBox(
+              height: 20.h,
+            ),
+            Text('مشروعتنا في مصر',style: TextStyle(color: Colors.black,fontSize: 20.sp,),),
+            Item(image: 'assets/images/commerciale-360x241.jpg', text: 'COMMERCIAL'),
+            Item(image: 'assets/images/educational-1-360x270.jpg', text: 'EDUCATION INSTITUTIONS'),
+            Item(image: 'assets/images/government-360x270.jpg', text: 'GOVERNMENT'),
+            Item(image: 'assets/images/hospitalty-360x128.jpg', text: 'HOSPITALITY'),
+          ],
+        ),
+      ),
+    );
+  }
+}
 
+class Item extends StatelessWidget {
+  const Item({
+    super.key, required this.image, required this.text,
+  });
+  final String image;
+  final String text;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        SizedBox(
+          height: 20.h,
+        ),
+        Image(image: AssetImage(image)),
+        SizedBox(
+          height: 20.h,
+        ),
+        Padding(
+          padding:  EdgeInsets.only(right: 15.w),
+          child: Align(
+              alignment: Alignment.centerRight,
+              child: Text(text,style: TextStyle(color: Colors.black,fontSize: 16.sp,fontWeight: FontWeight.normal),)),
+        )
+      ],
     );
   }
 }

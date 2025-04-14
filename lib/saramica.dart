@@ -226,6 +226,7 @@ class _SaramicaState extends State<Saramica> {
 
 
       body: SingleChildScrollView(
+        physics: BouncingScrollPhysics(),
         child: Column(
           children: [
 
@@ -235,7 +236,7 @@ class _SaramicaState extends State<Saramica> {
                   aspectRatio: 3/2,
                   height: 540.h,
                   viewportFraction: 1.0,
-                  autoPlay: false,
+                  autoPlay: true,
                   scrollPhysics: const BouncingScrollPhysics(),
                   enlargeStrategy: CenterPageEnlargeStrategy.zoom,
                   onPageChanged: (index,reason){

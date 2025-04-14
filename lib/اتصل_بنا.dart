@@ -218,7 +218,154 @@ class _CallUsState extends State<CallUs> {
 
 
       ),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.end,
+        children: [
+          Container(
+            width: double.infinity,
+            color: Colors.brown,
+            child: Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Column(
+                children: [
+                  Align(
+                      alignment: Alignment.centerRight
+                      ,child: Text('الرئيسية / اتصل بنا',style: TextStyle(color: Colors.white,fontSize: 18.sp,),)),
+                  SizedBox(
+                    height: 20.h,
+                  ),
+                  Align(
+                      alignment: Alignment.centerRight,
+                      child: Text('اختر مساحتك اتصل بموظفينا',style: TextStyle(color: Colors.white,fontSize: 22.sp,),)),
 
+                ],
+              ),
+            ),
+          ),
+          Align(
+              alignment: Alignment.center,
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text('لتوصيل القياسي المجاني ممول للطلبات عبر الانترنت', style: TextStyle(color: Colors.black,fontSize: 15.sp,fontWeight: FontWeight.bold),),
+              )),
+          Container(
+            color: Colors.brown,
+            width: double.infinity,
+            child: Align(
+                alignment: Alignment.center
+                ,child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text('   :اختر موضوع',style: TextStyle(color: Colors.white,fontSize: 15.sp),),
+                )),
+          ),
+         Padding(
+           padding: const EdgeInsets.all(8.0),
+           child: Column(
+             crossAxisAlignment: CrossAxisAlignment.end,
+             children: [
+               SizedBox(
+                 width: 200,
+                 child: TextField(
+                   decoration: InputDecoration(
+                       label: Align(
+                           alignment: Alignment.centerRight,
+                           child: Padding(
+                             padding: const EdgeInsets.all(8.0),
+                             child: Text('لقب',style: TextStyle(color: Colors.grey),),
+                           ))
+                   ),
+                 ),
+               ),
+               SizedBox(
+                 width: 200,
+                 child: TextField(
+                   decoration: InputDecoration(
+                       label: Align(
+                           alignment: Alignment.centerRight,
+                           child: Padding(
+                             padding: const EdgeInsets.all(8.0),
+                             child: Text('الاسم الاول',style: TextStyle(color: Colors.grey),),
+                           ))
+                   ),
+                 ),
+               ),
+               TextField(
+                 decoration: InputDecoration(
+                     label: Align(
+                         alignment: Alignment.centerRight,
+                         child: Padding(
+                           padding: const EdgeInsets.all(8.0),
+                           child: Text('الهاتف',style: TextStyle(color: Colors.grey),),
+                         ))
+                 ),
+               ),
+               TextField(
+                 decoration: InputDecoration(
+                     label: Align(
+                         alignment: Alignment.centerRight,
+                         child: Padding(
+                           padding: const EdgeInsets.all(8.0),
+                           child: Text('بريدك الألكتروني',style: TextStyle(color: Colors.grey),),
+                         ))
+                 ),
+               ),
+               TextField(
+                 decoration: InputDecoration(
+                     label: Align(
+                         alignment: Alignment.centerRight,
+                         child: Padding(
+                           padding: const EdgeInsets.all(8.0),
+                           child: Text('رسالتك',style: TextStyle(color: Colors.grey),),
+                         ))
+                 ),
+               ),
+               SizedBox(
+                 height: 20.h,
+               ),
+               Container(
+                 decoration: BoxDecoration(
+                     border: Border.all(color: Colors.black)
+                 ),
+                 child: Padding(
+                   padding: const EdgeInsets.all(5.0),
+                   child: Text('ارسل الطلب',style: TextStyle(color: Colors.black,fontSize: 15.sp),),
+                 ),
+               )
+             ],
+           ),
+         ),
+          Container(
+            decoration: BoxDecoration(
+                color: Color(0xffEEEDE7),
+              border: Border.all(
+                color: Colors.black
+              )
+            ),
+
+            child:Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Column(
+                children: [
+                  Align(
+                      alignment: Alignment.centerRight
+                      ,child: Text('حضور علي مستوي العالم',style: TextStyle(fontSize: 20.sp,color: Colors.black),)),
+                  SizedBox(height: 10.h,),
+                  Align(
+                      alignment: Alignment.centerRight,
+                      child: Text('نحن نصدر منتجاتنا الي 107 في جميع انحاء العالم, لمزيد من',style: TextStyle(color: Colors.black,fontSize: 15.sp,),)),
+                  Align(
+                      alignment: Alignment.centerRight,
+                      child: Text(':المعلومات, يرجي التواصل مع إدارة التصدير',style: TextStyle(color: Colors.black,fontSize: 15.sp,),)),
+                  Align(
+                      alignment: Alignment.centerRight,
+                      child: Text('export@groupPrima.com',style: TextStyle(color: Colors.grey,fontSize: 15.sp,),)),
+
+                ],
+              ),
+            ),
+          )
+        ],
+      ),
     );
   }
 }
