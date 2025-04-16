@@ -4,6 +4,7 @@ import 'package:theback/%D8%A7%D8%AA%D8%B5%D9%84_%D8%A8%D9%86%D8%A7.dart';
 import 'package:theback/%D8%A7%D9%84%D8%B9%D8%B1%D9%88%D8%B6_%D8%A7%D9%84%D8%AE%D8%A7%D8%B5%D9%87.dart';
 import 'package:theback/%D8%A7%D9%84%D9%85%D8%B4%D8%B1%D9%88%D8%B9%D8%A7%D8%AA.dart';
 import 'package:theback/%D8%B9%D8%B1%D8%B6_%D8%AE%D8%A7%D8%B5.dart';
+import 'package:theback/login.dart';
 import 'package:theback/saramica.dart';
 
 void main()
@@ -31,6 +32,7 @@ class MyApp extends StatelessWidget {
           SpecialOrder.id:(context)=>const SpecialOrder(),
           Projects.id:(context)=>const Projects(),
           CallUs.id:(context)=>const CallUs(),
+          Login.id:(context)=>const Login(),
         },
     );
     });

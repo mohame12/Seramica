@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:theback/%D8%A7%D8%AA%D8%B5%D9%84_%D8%A8%D9%86%D8%A7.dart';
 import 'package:theback/%D8%A7%D9%84%D8%B9%D8%B1%D9%88%D8%B6_%D8%A7%D9%84%D8%AE%D8%A7%D8%B5%D9%87.dart';
 import 'package:theback/%D8%A7%D9%84%D9%85%D8%B4%D8%B1%D9%88%D8%B9%D8%A7%D8%AA.dart';
 import 'package:theback/%D8%B9%D8%B1%D8%B6_%D8%AE%D8%A7%D8%B5.dart';
-import 'package:theback/login.dart';
 import 'package:theback/saramica.dart';
 
-class CallUs extends StatefulWidget {
-  static const String id='CallUs';
-  const CallUs({super.key});
+class Login extends StatefulWidget {
+  static const String id='Login';
+  const Login({super.key});
 
   @override
-  State<CallUs> createState() => _CallUsState();
+  State<Login> createState() => _LoginState();
 }
 
-class _CallUsState extends State<CallUs> {
+class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,12 +43,7 @@ class _CallUsState extends State<CallUs> {
             SizedBox(
               width: 8.w,
             ),
-            GestureDetector(
-                onTap: ()
-                {
-                  Navigator.pushReplacementNamed(context, Login.id);
-                },
-                child: Icon(Icons.account_circle_outlined,size: 20.r,)),
+            Icon(Icons.account_circle_outlined,size: 20.r,),
             SizedBox(
               width: 8.w,
             ),
@@ -225,155 +220,156 @@ class _CallUsState extends State<CallUs> {
 
       ),
       body: SingleChildScrollView(
+        physics: BouncingScrollPhysics(),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             Container(
-              width: double.infinity,
               color: Colors.brown,
-              child: Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: Column(
-                  children: [
-                    Align(
-                        alignment: Alignment.centerRight
-                        ,child: Text('الرئيسية / اتصل بنا',style: TextStyle(color: Colors.white,fontSize: 18.sp,),)),
-                    SizedBox(
-                      height: 20.h,
-                    ),
-                    Align(
-                        alignment: Alignment.centerRight,
-                        child: Text('اختر مساحتك اتصل بموظفينا',style: TextStyle(color: Colors.white,fontSize: 22.sp,),)),
+              width: double.infinity,
         
-                  ],
+              child: Align(
+                  alignment: Alignment.centerRight,
+                  child: Padding(
+                    padding: const EdgeInsets.all(20.0),
+                    child: Text('حسابك',style: TextStyle(fontSize: 30.sp,fontWeight: FontWeight.normal, color: Colors.white),),
+                  )),
+            ),
+        
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text('التوصيل القياسي المجاني ممول للطلبات عبر الإنترنت',style: TextStyle(color: Colors.black,fontSize: 15.sp,fontWeight: FontWeight.bold),),
+            ),
+             SizedBox(
+               height: 30.h,
+             ),
+        
+            Align(
+                alignment: Alignment.centerRight,
+                child: Padding(
+                  padding:  EdgeInsets.only(right: 25.w),
+                  child: Text('تسجيل الدخول',style: TextStyle(fontSize: 28.sp,color: Colors.black),),
+                )),
+            SizedBox(
+              height: 30.h,
+            ),
+            Align(
+                alignment: Alignment.centerRight,
+                child: Padding(
+                  padding: const EdgeInsets.all(20.0),
+                  child: Text('اسم المستخدم او البريد الالكتروني *',style: TextStyle(color: Colors.black,fontSize: 15.sp),),
+                )),
+            Padding(
+              padding: const EdgeInsets.all(10),
+              child: TextFormField(
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.black12,width: 0.2),
+                  )
                 ),
               ),
             ),
             Align(
-                alignment: Alignment.center,
+                alignment: Alignment.centerRight,
                 child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text('لتوصيل القياسي المجاني ممول للطلبات عبر الانترنت', style: TextStyle(color: Colors.black,fontSize: 15.sp,fontWeight: FontWeight.bold),),
+                  padding: const EdgeInsets.all(20.0),
+                  child: Text('كلمة المرور *',style: TextStyle(color: Colors.black,fontSize: 15.sp),),
                 )),
-            Container(
-              color: Colors.brown,
-              width: double.infinity,
-              child: Align(
-                  alignment: Alignment.center
-                  ,child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text('   :اختر موضوع',style: TextStyle(color: Colors.white,fontSize: 15.sp),),
-                  )),
-            ),
-           Padding(
-             padding: const EdgeInsets.all(8.0),
-             child: Column(
-               crossAxisAlignment: CrossAxisAlignment.end,
-               children: [
-                 SizedBox(
-                   width: 200,
-                   child: TextField(
-                     decoration: InputDecoration(
-                         label: Align(
-                             alignment: Alignment.centerRight,
-                             child: Padding(
-                               padding: const EdgeInsets.all(8.0),
-                               child: Text('لقب',style: TextStyle(color: Colors.grey),),
-                             ))
-                     ),
-                   ),
-                 ),
-                 SizedBox(
-                   width: 200,
-                   child: TextField(
-                     decoration: InputDecoration(
-                         label: Align(
-                             alignment: Alignment.centerRight,
-                             child: Padding(
-                               padding: const EdgeInsets.all(8.0),
-                               child: Text('الاسم الاول',style: TextStyle(color: Colors.grey),),
-                             ))
-                     ),
-                   ),
-                 ),
-                 TextField(
-                   decoration: InputDecoration(
-                       label: Align(
-                           alignment: Alignment.centerRight,
-                           child: Padding(
-                             padding: const EdgeInsets.all(8.0),
-                             child: Text('الهاتف',style: TextStyle(color: Colors.grey),),
-                           ))
-                   ),
-                 ),
-                 TextField(
-                   decoration: InputDecoration(
-                       label: Align(
-                           alignment: Alignment.centerRight,
-                           child: Padding(
-                             padding: const EdgeInsets.all(8.0),
-                             child: Text('بريدك الألكتروني',style: TextStyle(color: Colors.grey),),
-                           ))
-                   ),
-                 ),
-                 TextField(
-                   decoration: InputDecoration(
-                       label: Align(
-                           alignment: Alignment.centerRight,
-                           child: Padding(
-                             padding: const EdgeInsets.all(8.0),
-                             child: Text('رسالتك',style: TextStyle(color: Colors.grey),),
-                           ))
-                   ),
-                 ),
-                 SizedBox(
-                   height: 20.h,
-                 ),
-                 Container(
-                   decoration: BoxDecoration(
-                       border: Border.all(color: Colors.black)
-                   ),
-                   child: Padding(
-                     padding: const EdgeInsets.all(5.0),
-                     child: Text('ارسل الطلب',style: TextStyle(color: Colors.black,fontSize: 15.sp),),
-                   ),
-                 )
-               ],
-             ),
-           ),
-            Container(
-              decoration: BoxDecoration(
-                  color: Color(0xffEEEDE7),
-                border: Border.all(
-                  color: Colors.black
-                )
-              ),
-        
-              child:Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: Column(
-                  children: [
-                    Align(
-                        alignment: Alignment.centerRight
-                        ,child: Text('حضور علي مستوي العالم',style: TextStyle(fontSize: 20.sp,color: Colors.black),)),
-                    SizedBox(height: 10.h,),
-                    Align(
-                        alignment: Alignment.centerRight,
-                        child: Text('نحن نصدر منتجاتنا الي 107 في جميع انحاء العالم, لمزيد من',style: TextStyle(color: Colors.black,fontSize: 15.sp,),)),
-                    Align(
-                        alignment: Alignment.centerRight,
-                        child: Text(':المعلومات, يرجي التواصل مع إدارة التصدير',style: TextStyle(color: Colors.black,fontSize: 15.sp,),)),
-                    Align(
-                        alignment: Alignment.centerRight,
-                        child: Text('export@groupPrima.com',style: TextStyle(color: Colors.grey,fontSize: 15.sp,),)),
-        
-                  ],
+            Padding(
+              padding: const EdgeInsets.all(10),
+              child: TextFormField(
+                decoration: InputDecoration(
+                  prefixIcon: Icon(Icons.remove_red_eye_outlined,color: Colors.black,),
+                  border: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.black12,width: 0.2),
+                  )
                 ),
               ),
-            )
+            ),
+             SizedBox(
+               height: 20.h,
+             ),
+            
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Text('تذكرني',style: TextStyle(color: Colors.black,fontSize: 15.sp),),
+                  Icon(Icons.crop_square,color: Colors.grey,),
+                  SizedBox(width: 15.w,),
+
+                  Container(
+                    color: Colors.grey,
+                    child: Padding(
+                      padding: const EdgeInsets.all(5.0),
+                      child: Text('تسجيل الدخول',style: TextStyle(fontSize: 15.sp,fontWeight: FontWeight.bold),),
+                    ),
+                  ),
+
+                ],
+              ),
+            ),
+            Align(
+                alignment: Alignment.centerRight,
+                child: Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Text('نسيت كلمة مرورك؟',style: TextStyle(color: Colors.black,fontSize: 15.sp),),
+                )),
+            Align(
+                alignment: Alignment.centerRight,
+                child: Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Text('تسجيل جديد',style: TextStyle(color: Colors.black,fontSize: 30.sp),),
+                )),
+            Align(
+                alignment: Alignment.centerRight,
+                child: Padding(
+                  padding: const EdgeInsets.all(20.0),
+                  child: Text(' البريد الالكتروني *',style: TextStyle(color: Colors.black,fontSize: 15.sp),),
+                )),
+
+            Padding(
+              padding: const EdgeInsets.all(10),
+              child: TextFormField(
+                decoration: InputDecoration(
+                    border: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.black12,width: 0.2),
+                    )
+                ),
+              ),
+            ),
+            Align(
+                alignment: Alignment.centerRight,
+                child: Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  child: Text('.سنرسل كلمة المرور الي عنوان بريدك الالكتروني',style: TextStyle(color: Colors.black,fontSize: 15.sp),),
+                )),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text('Your personal data will be used to support yor experience throughtout this website, to manage access ti your account, and for other purposes described in our. ',textAlign: TextAlign.center,style: TextStyle(
+                fontSize: 12.sp,color: Colors.black
+              ),),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Container(
+                    color: Colors.grey,
+                    child: Padding(
+                      padding: const EdgeInsets.all(5.0),
+                      child: Text('تسجيل جديد',style: TextStyle(fontSize: 15.sp,fontWeight: FontWeight.bold),),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(height: 30.h,)
           ],
         ),
       ),
+
     );
   }
 }

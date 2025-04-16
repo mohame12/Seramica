@@ -5,6 +5,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:theback/%D8%A7%D8%AA%D8%B5%D9%84_%D8%A8%D9%86%D8%A7.dart';
 import 'package:theback/%D8%A7%D9%84%D9%85%D8%B4%D8%B1%D9%88%D8%B9%D8%A7%D8%AA.dart';
 import 'package:theback/%D8%B9%D8%B1%D8%B6_%D8%AE%D8%A7%D8%B5.dart';
+import 'package:theback/login.dart';
 import 'package:theback/saramica.dart';
 
 class Special extends StatefulWidget {
@@ -51,7 +52,12 @@ class _SpecialState extends State<Special> {
             SizedBox(
               width: 8.w,
             ),
-            Icon(Icons.account_circle_outlined,size: 20.r,),
+            GestureDetector(
+                onTap: ()
+                {
+                  Navigator.pushReplacementNamed(context, Login.id);
+                },
+                child: Icon(Icons.account_circle_outlined,size: 20.r,)),
             SizedBox(
               width: 8.w,
             ),

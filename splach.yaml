@@ -1,0 +1,22 @@
+flutter_native_splash:
+    color: "#FFFFFF"
+    color_dark: "#FFFFFF"
+    image: assets/images/CERAMIC PRIMA.jpg
+    image_dark: assets/images/CERAMIC PRIMA.jpg
+    branding: assets/images/a3a3419e-276d-4ed2-873d-5e1716b9a714.png
+    android: true
+    ios: true
+    web: false
+
+
+    android_12:
+      image: assets/images/CERAMIC PRIMA.jpg
+      image_dark: assets/images/CERAMIC PRIMA.jpg
+      color: "#FFFFFF"
+      color_dark: "#FFFFFF"
+      branding: assets/images/a3a3419e-276d-4ed2-873d-5e1716b9a714.png
+      web:  false
+
+  
+  
+  
