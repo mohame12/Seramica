@@ -16,6 +16,7 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
+  bool secure=true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -261,7 +262,7 @@ class _LoginState extends State<Login> {
             Padding(
               padding: const EdgeInsets.all(10),
               child: TextFormField(
-                keyboardType: TextInputType.text,
+                keyboardType: TextInputType.emailAddress,
                 decoration: InputDecoration(
                   border: OutlineInputBorder(
                     borderSide: BorderSide(color: Colors.black12,width: 0.2),
@@ -279,9 +280,13 @@ class _LoginState extends State<Login> {
               padding: const EdgeInsets.all(10),
               child: TextFormField(
                 keyboardType: TextInputType.number,
-                obscureText: true,
+                obscureText: secure,
                 decoration: InputDecoration(
-                  prefixIcon: Icon(Icons.remove_red_eye_outlined,color: Colors.black,),
+                  prefixIcon: IconButton(onPressed: (){
+                    setState(() {
+                      secure = !secure;
+                    });
+                  }, icon: Icon(secure?Icons.visibility_off:Icons.visibility),),
                   border: OutlineInputBorder(
                     borderSide: BorderSide(color: Colors.black12,width: 0.2),
                   )
