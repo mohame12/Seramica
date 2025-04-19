@@ -261,6 +261,7 @@ class _LoginState extends State<Login> {
             Padding(
               padding: const EdgeInsets.all(10),
               child: TextFormField(
+                keyboardType: TextInputType.text,
                 decoration: InputDecoration(
                   border: OutlineInputBorder(
                     borderSide: BorderSide(color: Colors.black12,width: 0.2),
@@ -277,6 +278,8 @@ class _LoginState extends State<Login> {
             Padding(
               padding: const EdgeInsets.all(10),
               child: TextFormField(
+                keyboardType: TextInputType.number,
+                obscureText: true,
                 decoration: InputDecoration(
                   prefixIcon: Icon(Icons.remove_red_eye_outlined,color: Colors.black,),
                   border: OutlineInputBorder(
@@ -331,6 +334,7 @@ class _LoginState extends State<Login> {
             Padding(
               padding: const EdgeInsets.all(10),
               child: TextFormField(
+                keyboardType: TextInputType.text,
                 decoration: InputDecoration(
                     border: OutlineInputBorder(
                       borderSide: BorderSide(color: Colors.black12,width: 0.2),

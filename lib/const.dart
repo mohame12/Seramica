@@ -6,7 +6,7 @@ import 'package:theback/stk_crsoul_widget.dart';
 
 bool isExpanded = false;
 List<Widget> carsoul=[
-  const StackCarsoulWidget(text: 'الق مظرة علي الأدوات الصحية', image: 'assets/images/3.jpeg', text2: 'شاهد الأدوات الصحية',),
+  const StackCarsoulWidget(text: 'القي نظرة علي الأدوات الصحية', image: 'assets/images/3.jpeg', text2: 'شاهد الأدوات الصحية',),
   const StackCarsoulWidget(text: 'اكتشف مجموعتنا الجديدة', image: 'assets/images/22.jpg', text2: 'شاهد المجموعات الجديدة',),
   Stack(
     children: [
