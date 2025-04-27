@@ -16,6 +16,11 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
+  final _formKey = GlobalKey<FormState>();
+
+  final TextEditingController passwordController = TextEditingController();
+  final TextEditingController confirmPasswordController = TextEditingController();
+
   bool secure=true;
   @override
   Widget build(BuildContext context) {
@@ -221,161 +226,233 @@ class _LoginState extends State<Login> {
 
       ),
       body: SingleChildScrollView(
-        physics: BouncingScrollPhysics(),
-        child: Column(
-          children: [
-            Container(
-              color: Colors.brown,
-              width: double.infinity,
-        
-              child: Align(
+        physics: const BouncingScrollPhysics(),
+        child: Form(
+          key: _formKey,
+          child: Column(
+            children: [
+              Container(
+                color: Colors.brown,
+                width: double.infinity,
+
+                child: Align(
+                    alignment: Alignment.centerRight,
+                    child: Padding(
+                      padding: const EdgeInsets.all(20.0),
+                      child: Text('حسابك',style: TextStyle(fontSize: 30.sp,fontWeight: FontWeight.normal, color: Colors.white),),
+                    )),
+              ),
+
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text('التوصيل القياسي المجاني ممول للطلبات عبر الإنترنت',style: TextStyle(color: Colors.black,fontSize: 15.sp,fontWeight: FontWeight.bold),),
+              ),
+               SizedBox(
+                 height: 30.h,
+               ),
+
+              Align(
+                  alignment: Alignment.centerRight,
+                  child: Padding(
+                    padding:  EdgeInsets.only(right: 25.w),
+                    child: Text('تسجيل الدخول',style: TextStyle(fontSize: 28.sp,color: Colors.black),),
+                  )),
+              SizedBox(
+                height: 30.h,
+              ),
+              Align(
                   alignment: Alignment.centerRight,
                   child: Padding(
                     padding: const EdgeInsets.all(20.0),
-                    child: Text('حسابك',style: TextStyle(fontSize: 30.sp,fontWeight: FontWeight.normal, color: Colors.white),),
+                    child: Text('اسم المستخدم او البريد الالكتروني *',style: TextStyle(color: Colors.black,fontSize: 15.sp),),
                   )),
-            ),
-        
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Text('التوصيل القياسي المجاني ممول للطلبات عبر الإنترنت',style: TextStyle(color: Colors.black,fontSize: 15.sp,fontWeight: FontWeight.bold),),
-            ),
-             SizedBox(
-               height: 30.h,
-             ),
-        
-            Align(
-                alignment: Alignment.centerRight,
-                child: Padding(
-                  padding:  EdgeInsets.only(right: 25.w),
-                  child: Text('تسجيل الدخول',style: TextStyle(fontSize: 28.sp,color: Colors.black),),
-                )),
-            SizedBox(
-              height: 30.h,
-            ),
-            Align(
-                alignment: Alignment.centerRight,
-                child: Padding(
-                  padding: const EdgeInsets.all(20.0),
-                  child: Text('اسم المستخدم او البريد الالكتروني *',style: TextStyle(color: Colors.black,fontSize: 15.sp),),
-                )),
-            Padding(
-              padding: const EdgeInsets.all(10),
-              child: TextFormField(
-                keyboardType: TextInputType.emailAddress,
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.black12,width: 0.2),
-                  )
-                ),
-              ),
-            ),
-            Align(
-                alignment: Alignment.centerRight,
-                child: Padding(
-                  padding: const EdgeInsets.all(20.0),
-                  child: Text('كلمة المرور *',style: TextStyle(color: Colors.black,fontSize: 15.sp),),
-                )),
-            Padding(
-              padding: const EdgeInsets.all(10),
-              child: TextFormField(
-                keyboardType: TextInputType.number,
-                obscureText: secure,
-                decoration: InputDecoration(
-                  prefixIcon: IconButton(onPressed: (){
-                    setState(() {
-                      secure = !secure;
-                    });
-                  }, icon: Icon(secure?Icons.visibility_off:Icons.visibility),),
-                  border: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.black12,width: 0.2),
-                  )
-                ),
-              ),
-            ),
-             SizedBox(
-               height: 20.h,
-             ),
-            
-            Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  Text('تذكرني',style: TextStyle(color: Colors.black,fontSize: 15.sp),),
-                  Icon(Icons.crop_square,color: Colors.grey,),
-                  SizedBox(width: 15.w,),
-
-                  Container(
-                    color: Colors.grey,
-                    child: Padding(
-                      padding: const EdgeInsets.all(5.0),
-                      child: Text('تسجيل الدخول',style: TextStyle(fontSize: 15.sp,fontWeight: FontWeight.bold),),
-                    ),
-                  ),
-
-                ],
-              ),
-            ),
-            Align(
-                alignment: Alignment.centerRight,
-                child: Padding(
-                  padding: const EdgeInsets.all(10.0),
-                  child: Text('نسيت كلمة مرورك؟',style: TextStyle(color: Colors.black,fontSize: 15.sp),),
-                )),
-            Align(
-                alignment: Alignment.centerRight,
-                child: Padding(
-                  padding: const EdgeInsets.all(10.0),
-                  child: Text('تسجيل جديد',style: TextStyle(color: Colors.black,fontSize: 30.sp),),
-                )),
-            Align(
-                alignment: Alignment.centerRight,
-                child: Padding(
-                  padding: const EdgeInsets.all(20.0),
-                  child: Text(' البريد الالكتروني *',style: TextStyle(color: Colors.black,fontSize: 15.sp),),
-                )),
-
-            Padding(
-              padding: const EdgeInsets.all(10),
-              child: TextFormField(
-                keyboardType: TextInputType.text,
-                decoration: InputDecoration(
+              Padding(
+                padding: const EdgeInsets.all(10),
+                child: TextFormField(
+                  keyboardType: TextInputType.emailAddress,
+                  decoration: const InputDecoration(
                     border: OutlineInputBorder(
                       borderSide: BorderSide(color: Colors.black12,width: 0.2),
                     )
+                  ),
                 ),
               ),
-            ),
-            Align(
-                alignment: Alignment.centerRight,
-                child: Padding(
-                  padding: const EdgeInsets.all(12.0),
-                  child: Text('.سنرسل كلمة المرور الي عنوان بريدك الالكتروني',style: TextStyle(color: Colors.black,fontSize: 15.sp),),
-                )),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Text('Your personal data will be used to support yor experience throughtout this website, to manage access ti your account, and for other purposes described in our. ',textAlign: TextAlign.center,style: TextStyle(
-                fontSize: 12.sp,color: Colors.black
-              ),),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  Container(
-                    color: Colors.grey,
-                    child: Padding(
-                      padding: const EdgeInsets.all(5.0),
-                      child: Text('تسجيل جديد',style: TextStyle(fontSize: 15.sp,fontWeight: FontWeight.bold),),
-                    ),
+              Align(
+                  alignment: Alignment.centerRight,
+                  child: Padding(
+                    padding: const EdgeInsets.all(20.0),
+                    child: Text('كلمة المرور *',style: TextStyle(color: Colors.black,fontSize: 15.sp),),
+                  )),
+              Padding(
+                padding: const EdgeInsets.all(10),
+                child: TextFormField(
+                  keyboardType: TextInputType.number,
+                  obscureText: secure,
+                  decoration: InputDecoration(
+                    prefixIcon: IconButton(onPressed: (){
+                      setState(() {
+                        secure = !secure;
+                      });
+                    }, icon: Icon(secure?Icons.visibility_off:Icons.visibility),),
+                    border: const OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.black12,width: 0.2),
+                    )
                   ),
-                ],
+                ),
               ),
-            ),
-            SizedBox(height: 30.h,)
-          ],
+               SizedBox(
+                 height: 20.h,
+               ),
+
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Text('تذكرني',style: TextStyle(color: Colors.black,fontSize: 15.sp),),
+                    const Icon(Icons.crop_square,color: Colors.grey,),
+                    SizedBox(width: 15.w,),
+
+                    Container(
+                      color: Colors.grey,
+                      child: Padding(
+                        padding: const EdgeInsets.all(5.0),
+                        child: Text('تسجيل الدخول',style: TextStyle(fontSize: 15.sp,fontWeight: FontWeight.bold),),
+                      ),
+                    ),
+
+                  ],
+                ),
+              ),
+              Align(
+                  alignment: Alignment.centerRight,
+                  child: Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: Text('نسيت كلمة مرورك؟',style: TextStyle(color: Colors.black,fontSize: 15.sp),),
+                  )),
+              Align(
+                  alignment: Alignment.centerRight,
+                  child: Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: Text('تسجيل جديد',style: TextStyle(color: Colors.black,fontSize: 30.sp),),
+                  )),
+              Align(
+                  alignment: Alignment.centerRight,
+                  child: Padding(
+                    padding: const EdgeInsets.all(20.0),
+                    child: Text(' البريد الالكتروني *',style: TextStyle(color: Colors.black,fontSize: 15.sp),),
+                  )),
+
+              Padding(
+                padding: const EdgeInsets.all(10),
+                child: TextFormField(
+                  keyboardType: TextInputType.text,
+                  decoration: const InputDecoration(
+                      border: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.black12,width: 0.2),
+                      )
+                  ),
+                ),
+              ),
+              Align(
+                  alignment: Alignment.centerRight,
+                  child: Padding(
+                    padding: const EdgeInsets.all(20.0),
+                    child: Text('كلمة المرور *',style: TextStyle(color: Colors.black,fontSize: 15.sp),),
+                  )),
+              Padding(
+                padding: const EdgeInsets.all(10),
+                child: TextFormField(
+                  controller: passwordController,
+                  validator: (value)
+                  {
+                    if(value==null||value.isEmpty){return'ادخل كلمة المرور';}
+                    if(value.length<6){return'كلمة المرور يجب ان تكون اكثر من 6 حروف';}
+                    if(value.length>12){return'كلمة المرور يجب ان تكون اقل من 12 حروف';}
+                    if(value.contains(' ')){return'كلمة المرور يجب ان لا تحتوي على بيانات متساوية';}
+                    return null;
+                  },
+                  keyboardType: TextInputType.number,
+                  obscureText: secure,
+                  decoration: InputDecoration(
+                      prefixIcon: IconButton(onPressed: (){
+                        setState(() {
+                          secure = !secure;
+                        });
+                      }, icon: Icon(secure?Icons.visibility_off:Icons.visibility),),
+                      border: const OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.black12,width: 0.2),
+                      )
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 20.h,
+              ),
+              Align(
+                  alignment: Alignment.centerRight,
+                  child: Padding(
+                    padding: const EdgeInsets.all(20.0),
+                    child: Text('تأكيد كلمة المرور *',style: TextStyle(color: Colors.black,fontSize: 15.sp),),
+                  )),
+              Padding(
+                padding: const EdgeInsets.all(10),
+                child: TextFormField(
+                  controller: confirmPasswordController,
+                  validator: (value){
+                    if(value==null||value.isEmpty){return'من فضلك اكد كلمة المرور';}
+                    if(value!=passwordController.text){return'كلمة المرور غير متطابقة';}
+                    return null;
+                  },
+                  keyboardType: TextInputType.number,
+                  obscureText: secure,
+                  decoration: InputDecoration(
+                      prefixIcon: IconButton(onPressed: (){
+                        setState(() {
+                          secure = !secure;
+                        });
+                      }, icon: Icon(secure?Icons.visibility_off:Icons.visibility),),
+                      border: const OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.black12,width: 0.2),
+                      )
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 20.h,
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text('Your personal data will be used to support yor experience throughtout this website, to manage access ti your account, and for other purposes described in our. ',textAlign: TextAlign.center,style: TextStyle(
+                  fontSize: 12.sp,color: Colors.black
+                ),),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    GestureDetector(
+                      onTap: (){
+                        if(_formKey.currentState!.validate())
+                        {
+                          ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('تم التسجيل بنجاح')));
+                        }
+                      },
+                      child: Container(
+                        color: Colors.grey,
+                        child: Padding(
+                          padding: const EdgeInsets.all(5.0),
+                          child: Text('تسجيل جديد',style: TextStyle(fontSize: 15.sp,fontWeight: FontWeight.bold),),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: 30.h,)
+            ],
+          ),
         ),
       ),
 
